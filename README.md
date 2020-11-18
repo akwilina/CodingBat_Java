@@ -1,2 +1,2 @@
 # CodingBat_Java
-My solutions for CodingBat tasks
+My solutions for CodingBat and Hackerrank tasks

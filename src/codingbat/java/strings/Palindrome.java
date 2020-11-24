@@ -1,4 +1,4 @@
-package codingbat.java.Strings;
+package codingbat.java.strings;
 
 public class Palindrome {
 

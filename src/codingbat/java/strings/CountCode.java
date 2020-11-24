@@ -1,4 +1,4 @@
-package codingbat.java.Strings;
+package codingbat.java.strings;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

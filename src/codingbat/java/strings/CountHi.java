@@ -1,4 +1,4 @@
-package codingbat.java.Strings;
+package codingbat.java.strings;
 /*
 Return the number of times that the string "hi" appears anywhere in the given string.
 

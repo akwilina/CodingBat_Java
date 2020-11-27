@@ -76,10 +76,8 @@ public class Application {
             String name = firstName + " " + lastName;
             names.add(name);
         }
-
         return names;
     }
-
 
     //   - metodę, która na podstawie zbioru osób zwróci sumę wieku wszystkich osób,
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie płeć, a wartością ilość osób o takiej płci (mapa typu Map<Character, Integer)

@@ -41,7 +41,7 @@ public class Application {
         System.out.println(sortedUniqueNames(people));
         System.out.println(firstLastName(people));
         System.out.println(ageSum(people));
-
+        System.out.println(genderRatio(people));
     }
 
     //- metodę, która na podstawie zbioru osób zwróci zbiór unikalnych imion tych osób,
@@ -92,5 +92,27 @@ public class Application {
     }
 
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie płeć, a wartością ilość osób o takiej płci (mapa typu Map<Character, Integer)
+    public static Map<Character, Integer> genderRatio (Set <Person> people) {
+
+        int male = 0;
+        int female = 0;
+
+        for(Person person : people) {
+            Character personSex = person.getSex();
+
+            if(personSex.equals('K')) {
+                female += 1;
+            } else {
+                male += 1;
+            }
+        }
+
+        Map <Character, Integer> genderRatio = new HashMap<>();
+        genderRatio.put('K', female);
+        genderRatio.put('M', male);
+
+        return genderRatio;
+    }
+
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie wiek osoby, a wartością lista osób o tym wieku (mapa typu Map<Integer, List<Person>>)
 }

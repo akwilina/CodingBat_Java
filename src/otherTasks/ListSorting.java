@@ -13,11 +13,12 @@ public class ListSorting {
         System.out.println(minus10(randomNumbersList()));
         System.out.println(multiplyBy2(randomNumbersList()));
         System.out.println(firstHalfOfList(randomNumbersList()));
+        System.out.println(secondHalfOfList(randomNumbersList()));
+        System.out.println(divideBy7(randomNumbersList()));
 
         /*
 
-        System.out.println(secondHalfOfList(list));
-        System.out.println(divideBy7(list));
+
         System.out.println(squaredList(list));
         System.out.println(secondSquare(list));
         System.out.println(indexOf22(list));
@@ -28,7 +29,6 @@ public class ListSorting {
         System.out.println(swap(list));
         System.out.println(isEmpty(list));
         System.out.println(sizeOfList(list));
-        /*
         System.out.println(iterator(list));
 
          */
@@ -110,13 +110,20 @@ public class ListSorting {
     }
 
     public static List<Integer> secondHalfOfList(List<Integer> list) {
-        Collections.sort(list, Comparator.reverseOrder());
-        return list;
+        System.out.println("List before modification: " + list);
+        return list.subList(list.size()/2, list.size());
     }
 
     public static List<Integer> divideBy7(List<Integer> list) {
-        Collections.sort(list, Comparator.reverseOrder());
-        return list;
+        System.out.println("List before modification: " + list);
+        List<Integer> newList = new ArrayList<>();
+
+        for(int number : list) {
+            if (number % 7 == 0) {
+                newList.add(number);
+            }
+        }
+        return newList;
     }
 
     public static List<Integer> squaredList(List<Integer> list) {

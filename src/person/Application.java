@@ -39,6 +39,7 @@ public class Application {
 
         System.out.println(uniqueNames(people));
         System.out.println(sortedUniqueNames(people));
+        System.out.println(firstLastName(people));
 
     }
 
@@ -65,7 +66,19 @@ public class Application {
     }
 
     //   - metodę, która na podstawie zbioru osób zwróci listę zawierającą połączenie imienia i nazwiska każdej z osób (np. "Jan Kowalski"),
+    public static List<String> firstLastName (Set<Person> people) {
 
+        List<String> names = new ArrayList<>();
+
+        for(Person person : people) {
+            String firstName = person.getFirstName();
+            String lastName = person.getLastName();
+            String name = firstName + " " + lastName;
+            names.add(name);
+        }
+
+        return names;
+    }
 
 
     //   - metodę, która na podstawie zbioru osób zwróci sumę wieku wszystkich osób,

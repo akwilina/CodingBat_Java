@@ -10,11 +10,12 @@ public class ListSorting {
         System.out.println(descendingList(randomNumbersList()));
         System.out.println(sum(randomNumbersList()));
         System.out.println(sumOfFirstThree(randomNumbersList()));
-        /*
-        System.out.println(minus10(list));
+        System.out.println(minus10(randomNumbersList()));
+        System.out.println(multiplyBy2(randomNumbersList()));
+        System.out.println(firstHalfOfList(randomNumbersList()));
 
-        System.out.println(multiplyBy2(list));
-        System.out.println(firstHalfOfList(list));
+        /*
+
         System.out.println(secondHalfOfList(list));
         System.out.println(divideBy7(list));
         System.out.println(squaredList(list));
@@ -37,7 +38,7 @@ public class ListSorting {
     public static List<Integer> randomNumbersList() {
         List<Integer> list = new ArrayList<>();
 
-        for(int i = 0; i < 100; i++) {
+        for(int i = 0; i < 26; i++) {
             Random randomNumber = new Random();
 
             int number = randomNumber.nextInt(101);
@@ -81,18 +82,31 @@ public class ListSorting {
     }
 
     public static List<Integer> minus10(List<Integer> list) {
-        Collections.sort(list, Comparator.reverseOrder());
+        System.out.println("List before adding: " + list);
+        for(int i = 0; i < list.size(); i++){
+            int number = list.get(i);
+            number = number + 10;
+            list.set(i, number);
+        }
+
         return list;
     }
 
     public static List<Integer> multiplyBy2(List<Integer> list) {
-        Collections.sort(list, Comparator.reverseOrder());
+        System.out.println("List before adding: " + list);
+        for(int i = 0; i < list.size(); i++) {
+            int number = list.get(i);
+            number = number * 2;
+            list.set(i, number);
+        }
+
         return list;
     }
 
+
     public static List<Integer> firstHalfOfList(List<Integer> list) {
-        Collections.sort(list, Comparator.reverseOrder());
-        return list;
+        System.out.println("List before modification: " + list);
+        return list.subList(0, list.size()/2);
     }
 
     public static List<Integer> secondHalfOfList(List<Integer> list) {

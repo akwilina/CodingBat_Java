@@ -1,7 +1,6 @@
 package person;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Application {
 
@@ -43,7 +42,6 @@ public class Application {
     }
 
     //- metodę, która na podstawie zbioru osób zwróci zbiór unikalnych imion tych osób,
-
     public static Set<String> uniqueNames(Set<Person> people) {
         Set<String> uniqueNames = new HashSet<>();
 
@@ -54,8 +52,18 @@ public class Application {
         return uniqueNames;
     }
 
-
     //   - metodę, która na podstawie zbioru osób zwróci zbiór unikalnych imion tych osób, posortowany,
+    public static Set<String> sortedUniqueNames(Set<Person> people) {
+        Set<String> uniqueNames = new TreeSet<>();
+
+        for(Person person : people) {
+            String name = person.getFirstName();
+            uniqueNames.add(name);
+        }
+        return uniqueNames;
+    }
+
+
     //   - metodę, która na podstawie zbioru osób zwróci listę zawierającą połączenie imienia i nazwiska każdej z osób (np. "Jan Kowalski"),
     //   - metodę, która na podstawie zbioru osób zwróci sumę wieku wszystkich osób,
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie płeć, a wartością ilość osób o takiej płci (mapa typu Map<Character, Integer)

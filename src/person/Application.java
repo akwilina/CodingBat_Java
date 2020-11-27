@@ -1,5 +1,6 @@
 package person;
 
+import java.lang.invoke.VarHandle;
 import java.util.*;
 
 public class Application {
@@ -29,11 +30,13 @@ public class Application {
         System.out.println(people.toString());
         people.add(new Person("Anna", "Rataj", 67, 'M'));
         people.add(new Person("Tomasz", "Relig", 14, 'K'));
-        people.add(new Person("Tomasz", "Witek", 74, 'M'));
-        people.add(new Person("Natalia", "Relig", 43, 'K'));
-        people.add(new Person("Tomasz", "Wolny", 33, 'M'));
-        people.add(new Person("Waldek", "Witek", 78, 'M'));
+        people.add(new Person("Tomasz", "Witek", 74, 'L'));
+        people.add(new Person("Natalia", "Relig", 43, 'G'));
+        people.add(new Person("Tomasz", "Wolny", 33, 'B'));
+        people.add(new Person("Waldek", "Witek", 74, 'M'));
         people.add(new Person("Natalia", "Migal", 66, 'K'));
+        people.add(new Person("Natalia", "Kuń", 66, 'K'));
+        people.add(new Person("Genowefen", "Ciul", 66, 'K'));
         System.out.println(people.size());
         System.out.println(people.toString());
 
@@ -93,24 +96,27 @@ public class Application {
 
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie płeć, a wartością ilość osób o takiej płci (mapa typu Map<Character, Integer)
     public static Map<Character, Integer> genderRatio (Set <Person> people) {
-
-        int male = 0;
-        int female = 0;
+        Map <Character, Integer> genderRatio = new HashMap<>();
 
         for(Person person : people) {
             Character personSex = person.getSex();
 
-            if(personSex.equals('K')) {
-                female += 1;
+            // Jeżeli w mapie już jest klucz, np. klucz 'M'
+            if(genderRatio.containsKey(personSex)) {
+                // to wykorzystujemy starą wartość spod tego klucza
+                Integer oldValue = genderRatio.get(personSex);
+                // do obliczenia nowej wartości
+                Integer newValue = oldValue + 1;
+                // i zapisujemy nową wartość pod tym kluczem
+                genderRatio.put(personSex, newValue);
+            // Jeżeli w mapie nie ma jeszcze klucza, np. klucza 'K'
             } else {
-                male += 1;
+                // to ustawiamy wartość początkową
+                // którą tutaj jest 1 bo mamy pierwszą osobę o danej płci
+                // (skoro nie było klucza dla tej płci w mapie)
+                genderRatio.put(personSex, 1);
             }
         }
-
-        Map <Character, Integer> genderRatio = new HashMap<>();
-        genderRatio.put('K', female);
-        genderRatio.put('M', male);
-
         return genderRatio;
     }
 

@@ -40,6 +40,7 @@ public class Application {
         System.out.println(uniqueNames(people));
         System.out.println(sortedUniqueNames(people));
         System.out.println(firstLastName(people));
+        System.out.println(ageSum(people));
 
     }
 
@@ -67,7 +68,6 @@ public class Application {
 
     //   - metodę, która na podstawie zbioru osób zwróci listę zawierającą połączenie imienia i nazwiska każdej z osób (np. "Jan Kowalski"),
     public static List<String> firstLastName (Set<Person> people) {
-
         List<String> names = new ArrayList<>();
 
         for(Person person : people) {
@@ -80,6 +80,17 @@ public class Application {
     }
 
     //   - metodę, która na podstawie zbioru osób zwróci sumę wieku wszystkich osób,
+
+    public static int ageSum (Set<Person> people) {
+        int sum = 0;
+
+        for(Person person : people) {
+            int age = person.getAge();
+            sum = sum + age;
+        }
+        return sum;
+    }
+
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie płeć, a wartością ilość osób o takiej płci (mapa typu Map<Character, Integer)
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie wiek osoby, a wartością lista osób o tym wieku (mapa typu Map<Integer, List<Person>>)
 }

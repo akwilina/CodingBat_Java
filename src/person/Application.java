@@ -26,6 +26,13 @@ public class Application {
         people.remove(person3);
         System.out.println(people.size());
 
+        //Dodaj do zbioru z pkt. 3 dwa nowe obiekty klasy Person o takich samych imionach, ale różnych pozostałych danych.
+        System.out.println(people.toString());
+        people.add(new Person("Anna", "Rataj", 67, 'M'));
+        people.add(new Person("Tomasz", "Relig", 14, 'K'));
+        System.out.println(people.size());
+        System.out.println(people.toString());
+
 
 
     }

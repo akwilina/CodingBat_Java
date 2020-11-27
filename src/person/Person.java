@@ -63,4 +63,9 @@ public class Person {
     public int hashCode() {
         return Objects.hash(firstName, lastName);
     }
+
+    @Override
+    public String toString() {
+        return String.format(firstName + " " + lastName + " Wiek: " + age + " Płeć: " + sex);
+    }
 }

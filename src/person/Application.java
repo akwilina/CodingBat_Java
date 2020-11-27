@@ -38,6 +38,7 @@ public class Application {
         System.out.println(people.toString());
 
         System.out.println(uniqueNames(people));
+        System.out.println(sortedUniqueNames(people));
 
     }
 
@@ -63,8 +64,10 @@ public class Application {
         return uniqueNames;
     }
 
-
     //   - metodę, która na podstawie zbioru osób zwróci listę zawierającą połączenie imienia i nazwiska każdej z osób (np. "Jan Kowalski"),
+
+
+
     //   - metodę, która na podstawie zbioru osób zwróci sumę wieku wszystkich osób,
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie płeć, a wartością ilość osób o takiej płci (mapa typu Map<Character, Integer)
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie wiek osoby, a wartością lista osób o tym wieku (mapa typu Map<Integer, List<Person>>)

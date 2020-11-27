@@ -7,6 +7,15 @@ public class Person {
     private int age;
     private char sex;
 
+    public Person(String firstName, String lastName, int age, char sex) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.sex = sex;
+    }
+
+    public Person() {}
+
     public String getFirstName() {
         return firstName;
     }

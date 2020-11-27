@@ -30,10 +30,34 @@ public class Application {
         System.out.println(people.toString());
         people.add(new Person("Anna", "Rataj", 67, 'M'));
         people.add(new Person("Tomasz", "Relig", 14, 'K'));
+        people.add(new Person("Tomasz", "Witek", 74, 'M'));
+        people.add(new Person("Natalia", "Relig", 43, 'K'));
+        people.add(new Person("Tomasz", "Wolny", 33, 'M'));
+        people.add(new Person("Waldek", "Witek", 78, 'M'));
+        people.add(new Person("Natalia", "Migal", 66, 'K'));
         System.out.println(people.size());
         System.out.println(people.toString());
 
-
+        System.out.println(uniqueNames(people));
 
     }
+
+    //- metodę, która na podstawie zbioru osób zwróci zbiór unikalnych imion tych osób,
+
+    public static Set<String> uniqueNames(Set<Person> people) {
+        Set<String> uniqueNames = new HashSet<>();
+
+        for(Person person : people) {
+            String name = person.getFirstName();
+            uniqueNames.add(name);
+        }
+        return uniqueNames;
+    }
+
+
+    //   - metodę, która na podstawie zbioru osób zwróci zbiór unikalnych imion tych osób, posortowany,
+    //   - metodę, która na podstawie zbioru osób zwróci listę zawierającą połączenie imienia i nazwiska każdej z osób (np. "Jan Kowalski"),
+    //   - metodę, która na podstawie zbioru osób zwróci sumę wieku wszystkich osób,
+    //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie płeć, a wartością ilość osób o takiej płci (mapa typu Map<Character, Integer)
+    //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie wiek osoby, a wartością lista osób o tym wieku (mapa typu Map<Integer, List<Person>>)
 }

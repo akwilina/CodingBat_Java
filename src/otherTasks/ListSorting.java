@@ -15,11 +15,10 @@ public class ListSorting {
         System.out.println(firstHalfOfList(randomNumbersList()));
         System.out.println(secondHalfOfList(randomNumbersList()));
         System.out.println(divideBy7(randomNumbersList()));
+        System.out.println(squaredList(randomNumbersList()));
+
 
         /*
-
-
-        System.out.println(squaredList(list));
         System.out.println(secondSquare(list));
         System.out.println(indexOf22(list));
         System.out.println(valueOfIndex13(list));
@@ -127,8 +126,15 @@ public class ListSorting {
     }
 
     public static List<Integer> squaredList(List<Integer> list) {
-        Collections.sort(list, Comparator.reverseOrder());
-        return list;
+        System.out.println("List before modification: " + list);
+        List<Integer> newList = new ArrayList<>();
+
+        for(int i = 0; i < list.size(); i++) {
+            int number = list.get(i);
+            number = number * number;
+            newList.add(i, number);
+        }
+        return newList;
     }
 
     public static List<Integer> secondSquare(List<Integer> list) {

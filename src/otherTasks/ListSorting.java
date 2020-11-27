@@ -6,21 +6,13 @@ public class ListSorting {
 
     public static void main(String[] args) {
 
-        List<Integer> list = new ArrayList<>();
-
-        for(int i = 0; i < 100; i++) {
-            Random randomNumber = new Random();
-
-            int number = randomNumber.nextInt(101);
-            list.add(number);
-        }
-
-        System.out.println(ascendingList(list));
-        System.out.println(descendingList(list));
-        System.out.println(sum(list));
+        System.out.println(ascendingList(randomNumbersList()));
+        System.out.println(descendingList(randomNumbersList()));
+        System.out.println(sum(randomNumbersList()));
+        System.out.println(sumOfFirstThree(randomNumbersList()));
         /*
-        System.out.println(sumOfFirstThree(list));
         System.out.println(minus10(list));
+
         System.out.println(multiplyBy2(list));
         System.out.println(firstHalfOfList(list));
         System.out.println(secondHalfOfList(list));
@@ -40,6 +32,18 @@ public class ListSorting {
 
          */
 
+    }
+
+    public static List<Integer> randomNumbersList() {
+        List<Integer> list = new ArrayList<>();
+
+        for(int i = 0; i < 100; i++) {
+            Random randomNumber = new Random();
+
+            int number = randomNumber.nextInt(101);
+            list.add(number);
+        }
+        return list;
     }
 
     public static List<Integer> ascendingList(List<Integer> list) {
@@ -64,9 +68,16 @@ public class ListSorting {
         return sum;
     }
 
-    public static List<Integer> sumOfFirstThree(List<Integer> list) {
-        Collections.sort(list, Comparator.reverseOrder());
-        return list;
+    public static int sumOfFirstThree(List<Integer> list) {
+
+        int sumOf3 = 0;
+
+        for(int i = 0; i < 3; i++) {
+            int number = list.get(i);
+            sumOf3 = sumOf3 + number;
+        }
+        System.out.println("sumOfFirstThree: " + list);
+        return sumOf3;
     }
 
     public static List<Integer> minus10(List<Integer> list) {

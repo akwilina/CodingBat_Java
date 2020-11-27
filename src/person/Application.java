@@ -16,6 +16,16 @@ public class Application {
         people.add(new Person("Tomasz", "Relig", 65, 'M'));
         people.add(new Person("Weronika", "Misol", 25, 'K'));
 
+        //Stwórz nowy obiekt klasy Person o takim samym imieniu i nazwisku, co któryś z obiektów z pkt 3.
+        Person person3 = new Person("Anna", "Rataj", 44, 'K');
+
+        //W interfejsie Set są metody: contains oraz remove, które umożliwiają sprawdzenie czy w zbiorze jest dany obiekt
+        // i usunięcie obiektu ze zbioru. Wykorzystaj te metody, aby ze zbioru z pkt. 3. usunąć obiekt z pkt. 4. Jak to osiągnąć?
+
+        System.out.println(people.size());
+        people.remove(person3);
+        System.out.println(people.size());
+
 
 
     }

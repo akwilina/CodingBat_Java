@@ -153,9 +153,14 @@ public class Application {
         }
     }
 
+// Napisz metodę, która przyjmie listę obiektów typu Person (List<Person>) i przeiteruje przez tą kolekcję od tyłu wywołując
+// metodę introduce na każdym elemencie z tej kolekcji. Nie używaj pętfli for do rozwiązania tego zadania.
 
+    public static void listPrintNames (List <Person> people) {
 
+        //people.sort(Comparator.reverseOrder());
 
+    }
 
 
 }

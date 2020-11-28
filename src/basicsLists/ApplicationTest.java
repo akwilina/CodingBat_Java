@@ -33,6 +33,19 @@ class ApplicationTest {
         Assertions.assertEquals(-1, result);
     }
 
+    @Test
+    @DisplayName("should return zero when list is empty")
+    void shouldReturnZeroWhenListIsEmpty() {
+        //given
+        List<Integer> list = List.of();
+
+        //when
+        int result = Application.max(list);
+
+        //then
+        Assertions.assertEquals(0, result);
+    }
+
 
 
 }

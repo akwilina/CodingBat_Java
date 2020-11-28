@@ -13,6 +13,9 @@ public class Application {
         System.out.println(min(list));
         System.out.println(sum(list));
         System.out.println(average(list));
+        System.out.println(multiplyEven(list));
+
+
     }
 
 
@@ -59,5 +62,16 @@ public class Application {
         average = sum / list.size();
 
         return average;
+    }
+
+    public static int multiplyEven(List <Integer> list) {
+        int evenMultiply = 1;
+
+        for(Integer number : list) {
+            if(number % 2 == 0){
+                evenMultiply *= number;
+            }
+        }
+        return evenMultiply;
     }
 }

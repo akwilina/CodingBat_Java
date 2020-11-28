@@ -50,16 +50,13 @@ public class Application {
 
     public static int average (List <Integer> list) {
         int average;
-        int numberOfZeros = 0;
         int sum = 0;
 
         for(Integer number : list) {
-            if(number == 0) {
-                numberOfZeros += 1;
-            }
+
             sum = sum + number;
         }
-        average = sum / (list.size()-numberOfZeros);
+        average = sum / list.size();
 
         return average;
     }

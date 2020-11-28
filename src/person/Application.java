@@ -35,7 +35,7 @@ public class Application {
         people.add(new Person("Tomasz", "Wolny", 33, 'B'));
         people.add(new Person("Waldek", "Witek", 74, 'M'));
         people.add(new Person("Natalia", "Migal", 66, 'K'));
-        people.add(new Person("Natalia", "Kuń", 66, 'K'));
+        people.add(new Person("Natalia", "Kowalska", 66, 'K'));
         people.add(new Person("Grzegorza", "Cekolada", 66, 'K'));
         System.out.println(people.size());
         System.out.println(people.toString());
@@ -46,9 +46,20 @@ public class Application {
         System.out.println(ageSum(people));
         System.out.println(genderRatio(people));
         // Przeiteruj przez zbiór osób z pkt. 3, aby na każdym elemencie wywołać metodę introduce.
-
         for(Person person : people) {
             person.introduce();
+        }
+
+        Artist artist1 = new Artist("Tomasz", "Witek", 74, 'L', "Kolor");
+        Artist artist2 = new Artist("Anna", "Rataj", 67, 'M', "Pietruszka");
+        Artist artist3 = new Artist("Waldek", "Witek", 74, 'M', "Pawlak");
+
+        people.add(artist1);
+        people.add(artist2);
+        people.add(artist3);
+
+        for(Person artist : people) {
+            artist.introduce();
         }
 
     }

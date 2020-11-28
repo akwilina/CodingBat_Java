@@ -1,6 +1,7 @@
 package basicsLists;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Application {
@@ -18,6 +19,7 @@ public class Application {
         System.out.println(listContainsNumber(list, 9));
         System.out.println(numberPositionOnList(list, 7));
         System.out.println(evenNumbersList(list));
+        System.out.println(sortedList(list));
 
 
     }
@@ -116,6 +118,14 @@ public class Application {
         return evenNumbersList;
     }
 
+    public static List<Integer> sortedList(List<Integer> list) {
+
+        List<Integer> sortedList = new ArrayList<>();
+
+        Collections.sort(list);
+        sortedList.addAll(list);
+        return sortedList;
+    }
 
 
 }

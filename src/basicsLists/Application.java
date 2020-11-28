@@ -20,6 +20,7 @@ public class Application {
         System.out.println(sortedList(list));
         System.out.println(occurenceCounter(list));
         System.out.println(maxValueFromList(list));
+        System.out.println(minValueOfSortedList(list));
 
 
     }
@@ -166,19 +167,21 @@ public class Application {
 
     public static int maxValueFromList(List<Integer> list) {
 
-        int maxValueFromList = Integer.MIN_VALUE;
-
         System.out.println("Unsorted list: " + list);
-        Collections.sort(list);
-        System.out.println("Sorted list: " + list);
+        List<Integer> sortedList = new ArrayList<>(list);
+        Collections.sort(sortedList);
+        System.out.println("Sorted list: " + sortedList);
 
-        for(Integer number : list) {
-            if(number > maxValueFromList){
-                maxValueFromList = number;
-            }
-        }
+        return sortedList.get(sortedList.size()-1);
+    }
 
-        return maxValueFromList;
+    // Napisz metodę, która w posortowanej liście zwróci najmniejszą wartość
+
+    public static int minValueOfSortedList(List<Integer> list) {
+        List<Integer> sortedList = new ArrayList<>(list);
+        Collections.sort(sortedList);
+
+        return sortedList.get(0);
     }
 
 }

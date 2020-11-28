@@ -13,13 +13,13 @@ class ApplicationTest {
     @Test
     @DisplayName("should find max value from list")
     void shouldFindMaxValue() {
-        // Given
+        // Given. Dane wejściowe
         List<Integer> integers = List.of(1, 2, 3, 4, 3, 2, 1);
 
-        // when
+        // when. Test warunku
         int result = Application.max(integers);
 
-        // then
+        // then. Założenia - to co ma być spełnione.
         Assertions.assertEquals(4, result);
     }
 

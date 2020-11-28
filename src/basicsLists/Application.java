@@ -17,6 +17,7 @@ public class Application {
         System.out.println(listContainsNumber(list, 8));
         System.out.println(listContainsNumber(list, 9));
         System.out.println(numberPositionOnList(list, 7));
+        System.out.println(evenNumbersList(list));
 
 
     }
@@ -103,5 +104,18 @@ public class Application {
         }
         return position;
     }
+
+    public static List<Integer> evenNumbersList(List<Integer> list) {
+        List<Integer> evenNumbersList = new ArrayList<>();
+
+        for(Integer number : list) {
+            if(number % 2 == 0) {
+                evenNumbersList.add(number);
+            }
+        }
+        return evenNumbersList;
+    }
+
+
 
 }

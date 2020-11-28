@@ -12,6 +12,7 @@ public class Application {
         System.out.println(max(list));
         System.out.println(min(list));
         System.out.println(sum(list));
+        System.out.println(average(list));
     }
 
 
@@ -44,8 +45,22 @@ public class Application {
         for(Integer number : list) {
             sum = sum + number;
         }
-
         return sum;
     }
 
+    public static int average (List <Integer> list) {
+        int average;
+        int numberOfZeros = 0;
+        int sum = 0;
+
+        for(Integer number : list) {
+            if(number == 0) {
+                numberOfZeros += 1;
+            }
+            sum = sum + number;
+        }
+        average = sum / (list.size()-numberOfZeros);
+
+        return average;
+    }
 }

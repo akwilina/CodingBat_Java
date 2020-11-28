@@ -1,0 +1,112 @@
+Index: src/hackerrank/BirthdayCakeCandles.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hackerrank/BirthdayCakeCandles.java	(date 1606060181377)
++++ src/hackerrank/BirthdayCakeCandles.java	(date 1606060181377)
+@@ -0,0 +1,62 @@
++/*
++package hackerrank;
++
++import java.io.*;
++import java.math.*;
++import java.security.*;
++import java.text.*;
++import java.util.*;
++import java.util.concurrent.*;
++import java.util.function.*;
++import java.util.regex.*;
++import java.util.stream.*;
++import static java.util.stream.Collectors.joining;
++import static java.util.stream.Collectors.toList;
++
++public class BirthdayCakeCandles {
++
++    */
++/*
++     * Complete the 'birthdayCakeCandles' function below.
++     *
++     * The function is expected to return an INTEGER.
++     * The function accepts INTEGER_ARRAY candles as parameter.
++     *//*
++
++
++    public static int birthdayCakeCandles(List<Integer> candles) {
++        // Write your code here
++        int result = 0;
++
++        for(int number : candles) {
++            int n = 0;
++            if(candles.get(n).intValue() == number) {
++                result += 1;
++            }
++        }
++        return result;
++    }
++
++}
++
++public class Solution {
++    public static void main(String[] args) throws IOException {
++        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
++        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
++
++        int candlesCount = Integer.parseInt(bufferedReader.readLine().trim());
++
++        List<Integer> candles = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
++                .map(Integer::parseInt)
++                .collect(toList());
++
++        int result = Result.birthdayCakeCandles(candles);
++
++        bufferedWriter.write(String.valueOf(result));
++        bufferedWriter.newLine();
++
++        bufferedReader.close();
++        bufferedWriter.close();
++    }
++}
++*/
+Index: src/hackerrank/test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hackerrank/test.java	(date 1606070032011)
++++ src/hackerrank/test.java	(date 1606070032011)
+@@ -0,0 +1,34 @@
++package hackerrank;
++import java.util.*;
++
++public class test {
++
++    public static void main(String[] args) {
++
++
++
++        List<Integer> candles = new ArrayList<>();
++        candles.add(0, 8);
++        candles.add(1, 9);
++        candles.add(2, 1);
++        candles.add(3, 8);
++
++
++            int result = 1;
++            int n = 1;
++
++            for(int number : candles) {
++                    if (n > candles.size()-1) {
++                        break;
++                    } else if (candles.get(n) == number){
++                        result += 1;
++                    }
++                    n++;
++            }
++        System.out.println(result);
++
++
++
++
++    }
++}

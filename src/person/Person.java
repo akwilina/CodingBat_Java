@@ -50,6 +50,14 @@ public class Person {
         this.sex = sex;
     }
 
+    //Dodaj do klasy Person metodę void introduce(), która powinna wyświetlić na konsoli informacje o osobie.
+    // Przeiteruj przez zbiór osób z pkt. 3, aby na każdym elemencie wywołać metodę introduce.
+
+
+    public void introduce() {
+        System.out.println(String.format(firstName + " " + lastName + " Wiek: " + age + " Płeć: " + sex));
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

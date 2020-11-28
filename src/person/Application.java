@@ -36,7 +36,7 @@ public class Application {
         people.add(new Person("Waldek", "Witek", 74, 'M'));
         people.add(new Person("Natalia", "Migal", 66, 'K'));
         people.add(new Person("Natalia", "Kuń", 66, 'K'));
-        people.add(new Person("Genowefen", "Ciul", 66, 'K'));
+        people.add(new Person("Grzegorza", "Cekolada", 66, 'K'));
         System.out.println(people.size());
         System.out.println(people.toString());
 
@@ -45,6 +45,12 @@ public class Application {
         System.out.println(firstLastName(people));
         System.out.println(ageSum(people));
         System.out.println(genderRatio(people));
+        // Przeiteruj przez zbiór osób z pkt. 3, aby na każdym elemencie wywołać metodę introduce.
+
+        for(Person person : people) {
+            person.introduce();
+        }
+
     }
 
     //- metodę, która na podstawie zbioru osób zwróci zbiór unikalnych imion tych osób,
@@ -121,4 +127,9 @@ public class Application {
     }
 
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie wiek osoby, a wartością lista osób o tym wieku (mapa typu Map<Integer, List<Person>>)
+
+
+
+
+
 }

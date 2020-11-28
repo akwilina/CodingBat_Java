@@ -62,6 +62,10 @@ public class Application {
             artist.introduce();
         }
 
+        System.out.println("PrintNames method: ");
+        printNames(people);
+
+
     }
 
     //- metodę, która na podstawie zbioru osób zwróci zbiór unikalnych imion tych osób,
@@ -138,6 +142,17 @@ public class Application {
     }
 
     //   - metodę, która na podstawie zbioru osób zwróci mapę, w której kluczem będzie wiek osoby, a wartością lista osób o tym wieku (mapa typu Map<Integer, List<Person>>)
+
+    // Napisz metodę, która przyjmie kolekcję obiektów typu Person (Collection<Person>) i przeiteruje przez tą
+    // kolekcję wywołując metodę introduce na każdym elemencie z tej kolekcji. Czy do tej metody można przekazać zbiór z pkt 3.?
+
+
+    public static void printNames (Collection<Person> people) {
+        for(Person person : people) {
+            person.introduce();
+        }
+    }
+
 
 
 

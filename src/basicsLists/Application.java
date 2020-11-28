@@ -11,6 +11,7 @@ public class Application {
         list.addAll(List.of(1,2,3,-4,4,3,-1,2,7,8,99,-13,0,0,1,0,3,3,-8,-1,1,6));
         System.out.println(max(list));
         System.out.println(min(list));
+        System.out.println(sum(list));
     }
 
 
@@ -25,7 +26,7 @@ public class Application {
         return max;
     }
 
-    public static int min (List<Integer> list) {
+    public static int min(List<Integer> list) {
         int min = Integer.MAX_VALUE;
 
         for(Integer number : list) {
@@ -34,6 +35,17 @@ public class Application {
             }
         }
         return min;
+    }
+
+
+    public static int sum(List <Integer> list) {
+        int sum = 0;
+
+        for(Integer number : list) {
+            sum = sum + number;
+        }
+
+        return sum;
     }
 
 }

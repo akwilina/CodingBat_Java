@@ -1,8 +1,6 @@
 package basicsLists;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Application {
 
@@ -20,6 +18,7 @@ public class Application {
         System.out.println(numberPositionOnList(list, 7));
         System.out.println(evenNumbersList(list));
         System.out.println(sortedList(list));
+        System.out.println(occurenceCounter(list));
 
 
     }
@@ -127,5 +126,36 @@ public class Application {
         return sortedList;
     }
 
+//Napisz metodę, która zwróci najczęściej występującą wartość z listy
+    public static int occurenceCounter(List<Integer> list) {
+
+        int occurenceCounter = 0;
+        Map<Integer, Integer> occurenceCounterMap = new HashMap<>();
+
+        for (Integer number : list) {
+
+            if (occurenceCounterMap.containsKey(number)) {
+                occurenceCounter = occurenceCounter + 1;
+                occurenceCounterMap.put(number, occurenceCounter);
+            } else {
+                occurenceCounter = 1;
+                occurenceCounterMap.put(number, occurenceCounter);
+            }
+        }
+
+        System.out.println("Created map: " + occurenceCounterMap.toString());
+
+        Collection<Integer> collectionOfValues = occurenceCounterMap.values();
+        System.out.println("Created list of collectionOfValues: " + collectionOfValues);
+
+
+        List<Integer> listOfValues = new ArrayList<>();
+        listOfValues.addAll(collectionOfValues);
+
+        Collections.sort(listOfValues);
+        int listOfValuesLastIndex = listOfValues.size() - 1;
+
+        return listOfValues.get(listOfValuesLastIndex);
+    }
 
 }

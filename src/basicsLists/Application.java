@@ -16,6 +16,7 @@ public class Application {
         System.out.println(multiplyEven(list));
         System.out.println(listContainsNumber(list, 8));
         System.out.println(listContainsNumber(list, 9));
+        System.out.println(numberPositionOnList(list, 7));
 
 
     }
@@ -88,6 +89,19 @@ public class Application {
         }
 
         return result;
+    }
+
+    public static int numberPositionOnList(List<Integer> list, int number){
+        int position = 0;
+
+        for(int i = 0; i < list.size(); i++) {
+
+            if(list.get(i) == number) {
+                position = i;
+                break;
+            }
+        }
+        return position;
     }
 
 }

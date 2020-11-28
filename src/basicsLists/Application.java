@@ -19,6 +19,7 @@ public class Application {
         System.out.println(evenNumbersList(list));
         System.out.println(sortedList(list));
         System.out.println(occurenceCounter(list));
+        System.out.println(maxValueFromList(list));
 
 
     }
@@ -121,8 +122,9 @@ public class Application {
 
         List<Integer> sortedList = new ArrayList<>();
 
-        Collections.sort(list);
         sortedList.addAll(list);
+        Collections.sort(sortedList);
+
         return sortedList;
     }
 
@@ -130,17 +132,19 @@ public class Application {
     public static int occurenceCounter(List<Integer> list) {
 
         int occurenceCounter = 0;
+        List<Integer> sortedList = new ArrayList<>(list);
+        Collections.sort(sortedList);
+
         Map<Integer, Integer> occurenceCounterMap = new HashMap<>();
 
-        for (Integer number : list) {
+        for (Integer number : sortedList) {
 
             if (occurenceCounterMap.containsKey(number)) {
                 occurenceCounter = occurenceCounter + 1;
-                occurenceCounterMap.put(number, occurenceCounter);
             } else {
                 occurenceCounter = 1;
-                occurenceCounterMap.put(number, occurenceCounter);
             }
+            occurenceCounterMap.put(number, occurenceCounter);
         }
 
         System.out.println("Created map: " + occurenceCounterMap.toString());
@@ -156,6 +160,25 @@ public class Application {
         int listOfValuesLastIndex = listOfValues.size() - 1;
 
         return listOfValues.get(listOfValuesLastIndex);
+    }
+
+    // Napisz metodę, która w posortowanej liście zwróci największą wartość
+
+    public static int maxValueFromList(List<Integer> list) {
+
+        int maxValueFromList = Integer.MIN_VALUE;
+
+        System.out.println("Unsorted list: " + list);
+        Collections.sort(list);
+        System.out.println("Sorted list: " + list);
+
+        for(Integer number : list) {
+            if(number > maxValueFromList){
+                maxValueFromList = number;
+            }
+        }
+
+        return maxValueFromList;
     }
 
 }

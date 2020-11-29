@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ApplicationTest {
 
     @Test
@@ -48,16 +46,30 @@ class ApplicationTest {
 
 
     @Test
-    @DisplayName("Should return max value when all values are negatives")
-    public static void shouldReturnMaxValueWhenAllValuesAreNegatives() {
+    @DisplayName("Should return max value when all values are negatives in sorted list")
+    void shouldReturnMaxValueWhenAllValuesAreNegativesInSortedList() {
         //Given
         List<Integer> list = List.of(-1, -5, -3, -7, -4);
 
         //When
-        int maxValue = Application.maxValueFromList(list);
+        int result = Application.maxValueOfSortedList(list);
 
         //Then
-        Assertions.assertEquals(maxValue, -1);
+        Assertions.assertEquals(-1, result);
+    }
+
+    @Test
+    @DisplayName("Should return zero when sorted list is empty")
+    void shouldReturnZeroWhenSortedListIsEmpty() {
+
+        //Given
+        List<Integer> list = List.of();
+
+        //When
+        int result = Application.maxValueOfSortedList(list);
+
+        //Then
+        Assertions.assertEquals(0, result);
     }
 
 

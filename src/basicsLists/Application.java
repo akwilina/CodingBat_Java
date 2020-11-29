@@ -19,7 +19,7 @@ public class Application {
         System.out.println(evenNumbersList(list));
         System.out.println(sortedList(list));
         System.out.println(occurenceCounter(list));
-        System.out.println(maxValueFromList(list));
+        System.out.println(maxValueOfSortedList(list));
         System.out.println(minValueOfSortedList(list));
 
 
@@ -169,8 +169,11 @@ public class Application {
 
     // Napisz metodę, która w posortowanej liście zwróci największą wartość
 
-    public static int maxValueFromList(List<Integer> list) {
+    public static int maxValueOfSortedList(List<Integer> list) {
 
+        if(list.isEmpty()) {
+            return 0;
+        }
         System.out.println("Unsorted list: " + list);
         List<Integer> sortedList = new ArrayList<>(list);
         Collections.sort(sortedList);

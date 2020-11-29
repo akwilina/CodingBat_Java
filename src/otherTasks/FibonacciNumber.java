@@ -6,13 +6,16 @@ import java.util.List;
 public class FibonacciNumber {
 
     public static void main(String[] args) {
-        fibonacci(4);
-        fibonacci(5);
-        fibonacci(10);
+        System.out.println(fibonacci(4));
+        System.out.println(fibonacci(5));
+        System.out.println(fibonacci(10));
+
+        System.out.println(fibonacciNumber(4));
+        System.out.println(fibonacciNumber(5));
+        System.out.println(fibonacciNumber(10));
     }
 
     private static int fibonacci(int number) {
-
         List<Integer> list = new ArrayList<>();
 
         list.add(0, 0);
@@ -23,5 +26,19 @@ public class FibonacciNumber {
         }
 
         return list.get(number);
+    }
+
+
+    public static int fibonacciNumber(int position) {
+        List<Integer> fibonacciList = new ArrayList<>();
+        fibonacciList.add(0);
+        fibonacciList.add(1);
+
+        for(int i = 2; i <= position; i++){
+            int nextNumber = fibonacciList.get(i-1) + fibonacciList.get(i-2);
+            fibonacciList.add(nextNumber);
+        }
+
+        return fibonacciList.get(position);
     }
 }

@@ -136,25 +136,25 @@ public class Application {
 //Napisz metodę, która zwróci najczęściej występującą wartość z listy
     public static int occurrenceCounter(List<Integer> list) {
 
-        int occurenceCounter = 0;
+        int occurrenceCounter = 0;
         List<Integer> sortedList = new ArrayList<>(list);
         Collections.sort(sortedList);
 
-        Map<Integer, Integer> occurenceCounterMap = new HashMap<>();
+        Map<Integer, Integer> occurrenceCounterMap = new HashMap<>();
 
         for (Integer number : sortedList) {
 
-            if (occurenceCounterMap.containsKey(number)) {
-                occurenceCounter = occurenceCounter + 1;
+            if (occurrenceCounterMap.containsKey(number)) {
+                occurrenceCounter = occurrenceCounter + 1;
             } else {
-                occurenceCounter = 1;
+                occurrenceCounter = 1;
             }
-            occurenceCounterMap.put(number, occurenceCounter);
+            occurrenceCounterMap.put(number, occurrenceCounter);
         }
 
-        System.out.println("Created map: " + occurenceCounterMap.toString());
+        System.out.println("Created map: " + occurrenceCounterMap.toString());
 
-        Collection<Integer> collectionOfValues = occurenceCounterMap.values();
+        Collection<Integer> collectionOfValues = occurrenceCounterMap.values();
         System.out.println("Created list of collectionOfValues: " + collectionOfValues);
 
 

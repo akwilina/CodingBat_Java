@@ -47,5 +47,18 @@ class ApplicationTest {
     }
 
 
+    @Test
+    @DisplayName("Should return max value when all values are negatives")
+    public static void shouldReturnMaxValueWhenAllValuesAreNegatives() {
+        //Given
+        List<Integer> list = List.of(-1, -5, -3, -7, -4);
+
+        //When
+        int maxValue = Application.maxValueFromList(list);
+
+        //Then
+        Assertions.assertEquals(maxValue, -1);
+    }
+
 
 }

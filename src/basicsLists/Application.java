@@ -29,6 +29,10 @@ public class Application {
     public static int max(List<Integer> list) {
         int max = Integer.MIN_VALUE;
 
+        if(list.isEmpty()) {
+            return 0;
+        }
+
         for (Integer number : list) {
             if (number > max) {
                 max = number;

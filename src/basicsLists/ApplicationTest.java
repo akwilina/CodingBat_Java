@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 class ApplicationTest {
@@ -112,4 +113,17 @@ class ApplicationTest {
         Assertions.assertEquals(List.of(0, 1, 1, 2, 2, 3, 4, 11), result);
     }
 
+    @Test
+    @DisplayName("Should return list with only even numbers from unsorted list")
+    void shouldReturnListWithOnlyEvenNumbersFromUnsortedList() {
+        //Given
+        List<Integer> list = List.of(1, 4, 15, 2, 5);
+
+        //When
+        List<Integer> result = Application.evenNumbersList(list);
+        Collections.sort(result);
+
+        //Then
+        Assertions.assertEquals(List.of(2, 4), result);
+    }
 }

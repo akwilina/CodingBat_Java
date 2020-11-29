@@ -133,23 +133,20 @@ public class Application {
         return sortedList;
     }
 
-//Napisz metodę, która zwróci najczęściej występującą wartość z listy
+//Napisz metodę, która zwróci wartość najczęściej występującą w liście
     public static int occurrenceCounter(List<Integer> list) {
-
-        int occurrenceCounter = 0;
         List<Integer> sortedList = new ArrayList<>(list);
-        Collections.sort(sortedList);
 
         Map<Integer, Integer> occurrenceCounterMap = new HashMap<>();
 
         for (Integer number : sortedList) {
 
             if (occurrenceCounterMap.containsKey(number)) {
-                occurrenceCounter = occurrenceCounter + 1;
+                Integer oldValue = occurrenceCounterMap.get(number);
+                occurrenceCounterMap.put(number, oldValue + 1);
             } else {
-                occurrenceCounter = 1;
+                occurrenceCounterMap.put(number, 1);
             }
-            occurrenceCounterMap.put(number, occurrenceCounter);
         }
 
         System.out.println("Created map: " + occurrenceCounterMap.toString());

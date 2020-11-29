@@ -7,6 +7,11 @@ public class SelectSortArray {
     public static void main(String[] args) {
 
         System.out.println(Arrays.toString(selectionSort(new int[]{3, 2, 5, 6, 1})));
+        int[] newArray = new int[]{};
+        int[] secondArray;
+        int[] thirdArray = new int[10];
+        int[] fourthArray = {1, 2, 3, 5};
+
     }
 
     public static int[] selectionSort(int[] list) {

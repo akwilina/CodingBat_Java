@@ -13,6 +13,10 @@ public class FibonacciNumber {
         System.out.println(fibonacciNumber(4));
         System.out.println(fibonacciNumber(5));
         System.out.println(fibonacciNumber(10));
+
+        printFirstXfibonacciElements(4);
+        printFirstXfibonacciElements(5);
+        printFirstXfibonacciElements(10);
     }
 
     private static int fibonacci(int number) {
@@ -41,4 +45,19 @@ public class FibonacciNumber {
 
         return fibonacciList.get(position);
     }
+
+    public static List<Integer> printFirstXfibonacciElements(int numberOfElements) {
+        List<Integer> fibonacciList =  new ArrayList<>();
+        fibonacciList.add(0);
+        fibonacciList.add(1);
+
+        for(int i = 2; i <= numberOfElements; i++) {
+            int nextNumber = fibonacciList.get(i-1) + fibonacciList.get(i-2);
+            fibonacciList.add(nextNumber);
+        }
+
+        System.out.println("First " + numberOfElements + " elements from Fibonacci sequence: " + fibonacciList);
+        return fibonacciList;
+    }
+
 }

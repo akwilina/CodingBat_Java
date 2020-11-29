@@ -85,4 +85,18 @@ class ApplicationTest {
         Assertions.assertEquals(-22, result);
     }
 
+    @Test
+    @DisplayName("Should return highest occurrence of value from sorted list")
+    void shouldReturnHighestOccurrenceOfValueFromSortedList(){
+
+        //Given
+        List<Integer> list = List.of(2, 2, 3, 4, 5, 5, 5, 6, 11);
+
+        //When
+        int result = Application.occurrenceCounter(list);
+
+        //Then
+        Assertions.assertEquals(3, result);
+    }
+
 }

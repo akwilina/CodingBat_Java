@@ -18,7 +18,7 @@ public class Application {
         System.out.println(numberPositionOnList(list, 7));
         System.out.println(evenNumbersList(list));
         System.out.println(sortedList(list));
-        System.out.println(occurenceCounter(list));
+        System.out.println(occurrenceCounter(list));
         System.out.println(maxValueOfSortedList(list));
         System.out.println(minValueOfSortedList(list));
 
@@ -134,7 +134,7 @@ public class Application {
     }
 
 //Napisz metodę, która zwróci najczęściej występującą wartość z listy
-    public static int occurenceCounter(List<Integer> list) {
+    public static int occurrenceCounter(List<Integer> list) {
 
         int occurenceCounter = 0;
         List<Integer> sortedList = new ArrayList<>(list);

@@ -99,4 +99,17 @@ class ApplicationTest {
         Assertions.assertEquals(3, result);
     }
 
+    @Test
+    @DisplayName("Should return sorted list from unsorted list")
+    void shouldReturnSortedListFromUnsortedList() {
+        //Given
+        List<Integer> list = List.of(3, 2, 4, 1, 11, 1, 0, 2);
+
+        //When
+        List<Integer> result = Application.sortedList(list);
+
+        //Then
+        Assertions.assertEquals(List.of(0, 1, 1, 2, 2, 3, 4, 11), result);
+    }
+
 }

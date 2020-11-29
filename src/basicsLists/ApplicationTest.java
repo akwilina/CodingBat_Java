@@ -72,5 +72,17 @@ class ApplicationTest {
         Assertions.assertEquals(0, result);
     }
 
+    @Test
+    @DisplayName("Should return min value of sorted list when all values are negatives")
+    void shouldReturnMinValueOfSortedListWhenAllValuesAreNegatives() {
+        //Given
+        List<Integer> list = List.of(-5, -3, -1, -11, -22);
+
+        //When
+        int result = Application.minValueOfSortedList(list);
+
+        //Then
+        Assertions.assertEquals(-22, result);
+    }
 
 }

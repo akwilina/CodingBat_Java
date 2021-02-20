@@ -10,8 +10,7 @@ public class RepeatingList {
         List<String> stringList = new ArrayList<String>();
         Collections.addAll(stringList, stringArray);
 
-
-
+        repeatingList(stringList);
     }
 
     public static List<String> repeatingList (List<String> stringList) {
@@ -55,5 +54,4 @@ public class RepeatingList {
 
         return new ArrayList<>(repeatingWords);
     }
-
 }

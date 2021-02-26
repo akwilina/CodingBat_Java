@@ -30,4 +30,19 @@ public class MapAB4 {
         }
         return map;
     }
+
+    public Map<String, String> mapAB41(Map<String, String> map) {
+
+        if(map.get("a") != null && map.get("b") != null){
+            if(map.get("a").length() > map.get("b").length()){
+                map.put("c", map.get("a"));
+            } else if (map.get("a").length() < map.get("b").length()){
+                map.put("c", map.get("b"));
+            } else {
+                map.put("a", "");
+                map.put("b", "");
+            }
+        }
+        return map;
+    }
 }

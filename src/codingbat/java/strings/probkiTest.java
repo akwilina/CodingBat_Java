@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class probkiTest {
-
+/*
    @Test
     public void shouldReturnNullWhenArrayIsNull() {
 
@@ -20,6 +20,6 @@ public class probkiTest {
 //then
         assertEquals(0, result.length);
     }
-
+*/
 
 }

@@ -14,8 +14,7 @@ topping2({"yogurt": "salt"}) → {"yogurt": "salt"}
 public class Topping2 {
     public Map<String, String> topping2(Map<String, String> map) {
         if(map.containsKey("ice cream")) {
-            String value = map.get("ice cream");
-            map.put("yogurt", value);
+            map.put("yogurt", map.get("ice cream"));
         }
 
         if(map.containsKey("spinach")){

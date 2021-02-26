@@ -22,4 +22,17 @@ public class MapAB3 {
         }
         return map;
     }
+
+    public Map<String, String> mapAB31(Map<String, String> map) {
+
+        if(map.get("a") != null ^ map.get("b") != null){
+            if(map.get("a") != null) {
+                map.put("b", map.get("a"));
+            } else {
+                map.put("a", map.get("b"));
+            }
+        }
+
+        return map;
+    }
 }

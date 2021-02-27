@@ -15,15 +15,18 @@ public class StringFilter1 {
 
         String[] result = new String[0];
 
-        if(n >= 0){
-            for(String str : array){
-                if(str.length() <= n){
-                    result = Arrays.copyOf(result, result.length + 1);
+        if(n < 0){
+            throw new IllegalArgumentException();
+        }
 
-                    result[result.length - 1] = str;
-                }
+        for (String str : array) {
+            if (str.length() <= n) {
+                result = Arrays.copyOf(result, result.length + 1);
+
+                result[result.length - 1] = str;
             }
         }
+
         return result;
     }
 

@@ -13,18 +13,28 @@ public class Arrays {
         firstLast6(new int[]{1, 2, 6});
         firstLast6(new int[]{6, 1, 2, 3});
         firstLast6(new int[]{13, 6, 1, 2, 3});
+        //firstLast6(new int[]{});
+        firstLast6(null);
         System.out.println(java.util.Arrays.toString(newArrayOf10()));
 
     }
 
     public static boolean firstLast6(int[] nums) {
 
+        if(nums == null){
+            throw new IllegalArgumentException("Nums cannot be null!");
+        }
+
+
             if (nums[0] == 6 || nums[nums.length - 1] == 6) {
                 return true;
             } else {
                 return false;
-        }
+            }
+
     }
+
+
 
     public static int[] newArrayOf10() {
         int[] array = new int[10];
